@@ -23,7 +23,7 @@
 
 ;;; Commentary:
 
-;; This package provide the command `memory-usage', which lists all
+;; This package provides the command `memory-usage', which lists all
 ;; buffers and how much memory they use.
 
 ;;; Code:
@@ -81,9 +81,7 @@
     (insert (format "\t%d+%d bytes in intervals\n" (car intervals) (cdr intervals)))
     (insert (format "\t%d+%d bytes in string headers\n" (car strings) (cdr strings)))
     (insert (format "\t%d bytes of string chars\n" chars))
-    (insert (format "\t%d bytes of vector headers\n" (* 2 memory-usage-word-size (car vectors))))
-    (insert (format "\t%d bytes of vector slots\n" (* memory-usage-word-size (cdr vectors))))
-
+    (insert (format "\t%d bytes of vector slots\n" chars))
     (let ((live (+ (car conses)
                    (car symbols)
                    (car markers)
@@ -91,8 +89,7 @@
                    (car intervals)
                    (car strings)
                    chars
-                   (* 2 memory-usage-word-size (car vectors))
-                   (* memory-usage-word-size (cdr vectors))))
+		   vectors))
           (dead (+ (cdr conses)
                    (cdr symbols)
                    (cdr markers)
