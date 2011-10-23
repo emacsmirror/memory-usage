@@ -4,6 +4,7 @@
 
 ;; Author: Stefan Monnier <monnier@cs.yale.edu>
 ;; Keywords: maint
+;; Version: 0.1
 
 ;; This file is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -22,7 +23,8 @@
 
 ;;; Commentary:
 
-;; 
+;; This package provide the command `memory-usage', which lists all
+;; buffers and how much memory they use.
 
 ;;; Code:
 
@@ -45,7 +47,7 @@
   "Return total number of ralloc bytes used by buffer."
   (with-current-buffer b
     (save-restriction
-      (widen) 
+      (widen)
       (+ (position-bytes (point-max))
 	 (- (position-bytes (point-min)))
 	 (gap-size)))))
