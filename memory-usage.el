@@ -1,8 +1,8 @@
-;;; memory-usage.el --- Analyze the memory usage of Emacs in various ways
+;;; memory-usage.el --- Analyze the memory usage of Emacs in various ways  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2002, 2004, 2012  Free Software Foundation, Inc.
 
-;; Author: Stefan Monnier <monnier@cs.yale.edu>
+;; Author: Stefan Monnier <monnier@iro.umontreal.ca>
 ;; Keywords: maint
 ;; Version: 0.2
 
